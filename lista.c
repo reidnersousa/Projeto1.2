@@ -37,7 +37,7 @@ struct lista
 };
 
 
-
+//Função que mostra a opçções
 int  adm()
 {
     int opc;
@@ -57,7 +57,7 @@ int  adm()
 
 }
 
-/**teste**/
+/**Começo do teste**/
 
 Lista *  AtualizarDados( Lista *recebe ,int codigo , char setorEsco[20])
 {
@@ -73,6 +73,47 @@ Lista *  AtualizarDados( Lista *recebe ,int codigo , char setorEsco[20])
 
     return inserirProdutoLocal(recebe,p7);
 }
+
+Lista *inserirProdutoLocal(Lista * localLista,Produto ilocal)
+{
+    Lista *novo=(Lista*)malloc (sizeof(Lista));
+    strcpy(novo->info.localArmaze,ilocal.localArmaze);
+    novo->prox=localLista;
+
+    return novo;
+}
+
+//*Tem um erro algo inserir GuardaMaterial ele criar uma nova lista *
+Lista *  GuardarMaterial(Lista *l,int codigo3, char local[20] )
+{
+
+    Lista*recebe;
+
+
+    for (recebe = l; recebe->info.codigo != codigo3; recebe = recebe->prox);
+    if(recebe==NULL)
+    {
+        printf("Não cadastrado");
+        return ;
+    }
+
+}
+
+Lista* inserirProduto( Lista * l, Produto i)
+{
+    Lista*novo =(Lista*)malloc(sizeof(Lista));
+
+    novo->info =i;
+    novo->prox=l;
+    return novo;
+
+
+
+}
+/***Fim do Teste ***/
+
+
+
 
 Lista *  DigitaStruct( Lista *recebe3 )
 {
@@ -117,12 +158,8 @@ Lista *  DigitaStruct( Lista *recebe3 )
     fflush(stdin);
 
     return inserirProdutoTeste(recebe3,p1);
-
-
-
-
-
 }
+
 
 
 
@@ -166,7 +203,7 @@ Lista*AdicionaProdutoumporUm(Lista * rebvar,Produto p1, Produto p2 )
 
 
 }
-/*FAZ TUDO*/
+/*FAZ TUDO Principal */
 void controleFuncionario()
 
 {
@@ -250,41 +287,11 @@ void controleFuncionario()
     while(reposta!=7);
 }
 
-/**TEste**/
-
-
-Lista *inserirProdutoLocal(Lista * localLista,Produto ilocal)
-{
-    Lista *novo=(Lista*)malloc (sizeof(Lista));
-
-
-
-    strcpy(novo->info.localArmaze,ilocal.localArmaze);
-    novo->prox=localLista;
-
-    return novo;
-}
-
-
-//*Tem um erro algo inserir GuardaMaterial ele criar uma nova lista *
-Lista *  GuardarMaterial(Lista *l,int codigo3, char local[20] )
-{
-
-    Lista*recebe;
-
-
-    for (recebe = l; recebe->info.codigo != codigo3; recebe = recebe->prox);
-    if(recebe==NULL)
-    {
-        printf("Não cadastrado");
-        return ;
-    }
 
 
 
 
 
-}
 
 
 float estoqueMin( int tempReposicao, int tempo,int consumoMedio1)
@@ -353,19 +360,7 @@ Lista *inserirProdutoTesteM(Lista * l, Produto i)
 
 }
 
-/****Fim do teste ****/
 
-Lista* inserirProduto( Lista * l, Produto i)
-{
-    Lista*novo =(Lista*)malloc(sizeof(Lista));
-
-    novo->info =i;
-    novo->prox=l;
-    return novo;
-
-
-
-}
 
 void ComprarProduto(Lista * l,int codigo,int x)
 {
