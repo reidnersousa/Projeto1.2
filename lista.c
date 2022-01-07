@@ -59,14 +59,17 @@ int  adm()
 
 /**teste**/
 
-Lista *  DigitaStructLocal( Lista *recebe )
+Lista *  AtualizarDados( Lista *recebe ,int codigo , char setorEsco[20])
 {
+
     Produto p7;
     fflush(stdin);
     printf("Digite o local de Armazenamento(Setor sul , Setor norte ,Setor Oeste e Setor Leste)\n");
     fgets(p7.localArmaze,30, stdin);
 
     fflush(stdin);
+
+
 
     return inserirProdutoLocal(recebe,p7);
 }
@@ -276,6 +279,8 @@ Lista *  GuardarMaterial(Lista *l,int codigo3, char local[20] )
         printf("Não cadastrado");
         return ;
     }
+
+
 
 
 

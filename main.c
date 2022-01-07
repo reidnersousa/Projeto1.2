@@ -5,10 +5,12 @@
 #include <string.h>
 #include "lista.h"
 #include "Retangulo.h"
+
+
 /**
 ***
 ****             @autor                   Reidner sousa
-******           @Version                 11
+******           @Version                 11.3
 *******          @DataUltimaModificacao   06/01/2022 21:52
 *******          @NomeCodigo              Projeto 1
 ******           @TipoCodigo              Lista encadeada
@@ -51,8 +53,9 @@ int main()
 */
 
 
-    //Lista*lop;
+    Lista*lop;
     //DigitaStructLocal(lop);
+    AtualizarDados(lop,111,"Feijao com batata");
     printf("\n<n>");
     printf("\b<b>");
     printf("\t<t>");
