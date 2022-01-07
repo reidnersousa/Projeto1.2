@@ -58,22 +58,25 @@ int  adm()
 }
 
 /**Começo do teste**/
-
-Lista *  AtualizarDados( Lista *recebe ,int codigo , char setorEsco[20])
+/*
+Lista *  AtualizarDados( Lista *l ,int cod ,char nome[20])
 {
 
-    Produto p7;
-    fflush(stdin);
-    printf("Digite o local de Armazenamento(Setor sul , Setor norte ,Setor Oeste e Setor Leste)\n");
-    fgets(p7.localArmaze,30, stdin);
-
-    fflush(stdin);
+    Lista*recebe;
 
 
+    for (recebe = l; recebe != NULL; recebe = recebe->prox)
+    {
+        recebe->info.codigo;
+        recebe->info.localArmaze;
 
-    return inserirProdutoLocal(recebe,p7);
+
+    }
+    return recebe;
+
+
 }
-
+*/
 Lista *inserirProdutoLocal(Lista * localLista,Produto ilocal)
 {
     Lista *novo=(Lista*)malloc (sizeof(Lista));
@@ -96,6 +99,14 @@ Lista *  GuardarMaterial(Lista *l,int codigo3, char local[20] )
         printf("Não cadastrado");
         return ;
     }
+    if(recebe->info.codigo==codigo3){
+        printf("codigo diferente \n");
+
+
+    }
+    else if(recebe->info.codigo!=codigo3){
+        printf("codigo igual");
+    }
 
 }
 
@@ -114,7 +125,11 @@ Lista* inserirProduto( Lista * l, Produto i)
 
 
 
-
+/**         @Posicao n2
+**          @NomeFuncao DigitaStruct
+*           @Oquefaz    recebe os dados via teclado e retorna uma função "inserirProdutoTeste"
+*           @OquaisOutrasfuncoesdentro "inserirProdutoTeste"
+**/
 Lista *  DigitaStruct( Lista *recebe3 )
 {
 
@@ -166,6 +181,10 @@ Lista *  DigitaStruct( Lista *recebe3 )
 
 
 /*Não estou usando*/
+/**
+*                  @posicao n2
+*                  @
+*/
 Lista*AdicionaProdutoumporUm(Lista * rebvar,Produto p1, Produto p2 )
 
 {
@@ -203,6 +222,11 @@ Lista*AdicionaProdutoumporUm(Lista * rebvar,Produto p1, Produto p2 )
 
 
 }
+
+
+/**
+*           @Posicao n3
+*/
 /*FAZ TUDO Principal */
 void controleFuncionario()
 
@@ -328,7 +352,13 @@ Lista* inicializaE (void)
 
 
 
-
+/**
+*               @Posicao desconhecida
+*               @NomeFuncao inserirProdutoTeste
+*               @FuncoesDentrodaFuncao
+*               @QqueafuncaoFaz Ela pegas as funções que foram digitas na "DigitaStruct"   e coloca numa lista "novo"
+*               e retorna uma lista
+*/
 Lista *inserirProdutoTeste(Lista * l,Produto i)
 {
     Lista *novo=(Lista*)malloc (sizeof(Lista));

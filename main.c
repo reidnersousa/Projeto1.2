@@ -10,8 +10,8 @@
 /**
 ***
 ****             @autor                   Reidner sousa
-******           @Version                 11.3
-*******          @DataUltimaModificacao   06/01/2022 21:52
+******           @Version                 11.4
+*******          @DataUltimaModificacao   07/01/2022 19:42
 *******          @NomeCodigo              Projeto 1
 ******           @TipoCodigo              Lista encadeada
 *****            @CoisasParaFazer         Arrumar lista.c na linha 218 (o problema  é como atualizar o local de guarda o produto sem criar uma nova lista )
@@ -55,7 +55,7 @@ int main()
 
     Lista*lop;
     //DigitaStructLocal(lop);
-    AtualizarDados(lop,111,"Feijao com batata");
+   // AtualizarDados(lop,111,"Feijao com batata");
     printf("\n<n>");
     printf("\b<b>");
     printf("\t<t>");
