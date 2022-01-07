@@ -60,7 +60,7 @@ void imprimeTodosProduto(Lista *l);
 Lista* buscaProdutoCodigo (Lista* l, int v);
 
 //Função definir onde vai ser guardando uma variavel
-Lista * GuardarMaterial(Lista *l,int codigo3);
+Lista * GuardarMaterial(Lista *l,int codigo3,char local1[20]);
 
 //Função que inserir Produto
 Lista *inserirProdutoTeste(Lista * l, Produto i);

@@ -122,6 +122,9 @@ Lista *  DigitaStruct( Lista *recebe3 )
 }
 
 
+
+
+
 /*Não estou usando*/
 Lista*AdicionaProdutoumporUm(Lista * rebvar,Produto p1, Produto p2 )
 
@@ -176,8 +179,6 @@ void controleFuncionario()
         {
 
             creb=DigitaStruct(creb);
-
-
         }
 
         if(reposta==2)
@@ -207,10 +208,20 @@ void controleFuncionario()
         {
             //erro aqui
             int codigo3;
+            char local1[20];
             printf("opção 5\n");
             printf("Digite o codigo \n");
             scanf("%d",&codigo3);
-            creb=GuardarMaterial(creb,codigo3);
+
+            if(codigo3==creb->info.codigo){
+                printf("Digite onde deixa guarda o produto \n");
+                //scanf("%s",&local1); da um overflow
+
+                creb=GuardarMaterial(creb,codigo3,local1);
+            }
+            else if(codigo3=!creb->info.codigo){
+                printf("Não esta funcionasdo2");
+            }
 
         }
 
@@ -253,15 +264,11 @@ Lista *inserirProdutoLocal(Lista * localLista,Produto ilocal)
 
 
 //*Tem um erro algo inserir GuardaMaterial ele criar uma nova lista *
-Lista *  GuardarMaterial(Lista *l,int codigo3 )
+Lista *  GuardarMaterial(Lista *l,int codigo3, char local[20] )
 {
 
     Lista*recebe;
-    char local1[30]="Setor Norte";
-    char s2[30]="Setor Sul";
-    char s3[30]="Setor Leste";
-    char s4[30]="Setor Oeste";
-    char s5[30]="Qualquer valor";
+
 
     for (recebe = l; recebe->info.codigo != codigo3; recebe = recebe->prox);
     if(recebe==NULL)
@@ -269,17 +276,7 @@ Lista *  GuardarMaterial(Lista *l,int codigo3 )
         printf("Não cadastrado");
         return ;
     }
-    //if(strcmp(recebe->info.localArmaze,local1)==0&& strcmp(recebe->info.codigo,codigo3)==0)
-    if(recebe->info.codigo==codigo3 )
-    {
-        printf("Criar uma lista nova sem quere arruma iisso\n");
-        recebe=DigitaStructLocal(recebe);
-        return recebe;
-    }
-    else
-    {
-        printf("\n erro ao no teste \n ");
-    }
+
 
 
 }

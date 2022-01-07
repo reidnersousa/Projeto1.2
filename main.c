@@ -8,11 +8,11 @@
 /**
 ***
 ****             @autor                   Reidner sousa
-******           @Version                 10
-*******          @DataUltimaModificacao   06/01/2022 20:29
+******           @Version                 11
+*******          @DataUltimaModificacao   06/01/2022 21:52
 *******          @NomeCodigo              Projeto 1
 ******           @TipoCodigo              Lista encadeada
-*****            @CoisasParaFazer
+*****            @CoisasParaFazer         Arrumar lista.c na linha 218 (o problema  é como atualizar o local de guarda o produto sem criar uma nova lista )
 ****                                      Arrumar a opção numero no 5 e  guarda Material
 **/
 
