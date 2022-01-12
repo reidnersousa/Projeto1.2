@@ -77,38 +77,10 @@ Lista *  AtualizarDados( Lista *l ,int cod ,char nome[20])
 
 }
 */
-Lista *inserirProdutoLocal(Lista * localLista,Produto ilocal)
-{
-    Lista *novo=(Lista*)malloc (sizeof(Lista));
-    strcpy(novo->info.localArmaze,ilocal.localArmaze);
-    novo->prox=localLista;
-
-    return novo;
-}
-
-//*Tem um erro algo inserir GuardaMaterial ele criar uma nova lista *
-Lista *  GuardarMaterial(Lista *l,int codigo3, char local[20] )
-{
-
-    Lista*recebe;
 
 
-    for (recebe = l; recebe->info.codigo != codigo3; recebe = recebe->prox);
-    if(recebe==NULL)
-    {
-        printf("Não cadastrado");
-        return ;
-    }
-    if(recebe->info.codigo==codigo3){
-        printf("codigo diferente \n");
 
 
-    }
-    else if(recebe->info.codigo!=codigo3){
-        printf("codigo igual");
-    }
-
-}
 
 Lista* inserirProduto( Lista * l, Produto i)
 {
@@ -280,22 +252,13 @@ void controleFuncionario()
         }
         if(reposta==5)
         {
-            //erro aqui
-            int codigo3;
-            char local1[20];
-            printf("opção 5\n");
-            printf("Digite o codigo \n");
-            scanf("%d",&codigo3);
 
-            if(codigo3==creb->info.codigo){
-                printf("Digite onde deixa guarda o produto \n");
-                //scanf("%s",&local1); da um overflow
 
-                creb=GuardarMaterial(creb,codigo3,local1);
-            }
-            else if(codigo3=!creb->info.codigo){
-                printf("Não esta funcionasdo2");
-            }
+            int guardacodigo;
+            printf("\n Digite o codigo do produto para escolhe onde deixa guarda o produto\n");
+            scanf("%d",&guardacodigo);
+            atualizar(creb,guardacodigo);
+
 
         }
 
@@ -795,4 +758,74 @@ int tamanho(Lista* l)
     }
     return count;
 }
+
+
+
+
+
+
+/***********************************************************************************************
+                                testes
+*************************************************************************************************/
+
+void atualizar (Lista *l,int guardacod)
+{
+    Produto guard;
+    Lista*rece;
+    // for( p = l ;  p->info.codigo    != v.codigo; p      = p->prox);
+
+
+
+
+    for (rece = l; rece->info.codigo  != guardacod; rece = rece->prox);
+
+    if(rece==NULL)
+    {
+        printf("Não cadastrado");
+        return ;
+    }
+
+    printf(" Int\n");
+    printf("Digite o consumoMedio\n");
+    scanf("%d",&guard.connsumoMedio);
+
+
+    printf("String\n");
+
+    printf("\t____________Digite o categoria_______________\n\n");
+
+    fflush(stdin);
+    printf("\t____________Digite o local de Armazenamento_______________\n\n");
+    printf("\tSetor Sul\n");
+    printf("\tSetor Norte\n");
+    printf("\tSetor Oeste \n");
+    printf("\tSetor Leste \n");
+
+    fgets(guard.localArmaze,30, stdin);
+
+    fflush(stdin);
+
+    rece=TrocaGuarda(rece,guard);
+
+
+}
+
+
+Lista *TrocaGuarda(Lista * l,Produto i)
+{
+    Lista *novo=(Lista*)malloc (sizeof(Lista));
+
+
+    novo->info.connsumoMedio=i.connsumoMedio;
+
+
+    strcpy(novo->info.localArmaze,i.localArmaze);
+
+    novo->prox=l;
+
+    return novo;
+}
+
+
+
 

@@ -10,12 +10,12 @@
 /**
 ***
 ****             @autor                   Reidner sousa
-******           @Version                 11.4
-*******          @DataUltimaModificacao   07/01/2022 19:42
+******           @Version                 12.1
+*******          @DataUltimaModificacao   12/01/2022 13:24
 *******          @NomeCodigo              Projeto 1
 ******           @TipoCodigo              Lista encadeada
-*****            @CoisasParaFazer         Arrumar lista.c na linha 218 (o problema  é como atualizar o local de guarda o produto sem criar uma nova lista )
-****                                      Arrumar a opção numero no 5 e  guarda Material
+*****            @CoisasParaFazer
+****                                      Arruma o "atualizar"
 **/
 
 

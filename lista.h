@@ -226,8 +226,6 @@ Lista* criaProduto (Produto v);
 
 
 
-//Função definir onde vai ser guardando uma variavel
-Lista * GuardarMaterial(Lista *l,int codigo3,char local1[20]);
 
 
 
@@ -260,6 +258,13 @@ Lista* criaE (int v);
 Lista *inserirProdutoLocal(Lista * localLista,Produto ilocal);
 
 int igual (Lista* l1, Lista* l2);
+
+
+
+//teste
+
+Lista *TrocaGuarda(Lista * l,Produto i);
+
 
 
 
