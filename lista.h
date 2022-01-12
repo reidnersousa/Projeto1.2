@@ -35,8 +35,17 @@ struct produto p6={322,"Produtos de Teste","TEste",
     "Setor De Teste",33};
 
     */
-/**Teste */
-/**PRODUTO*/
+
+
+
+//Função que mostra a opçções
+/**         @numeroFuncao 1
+*
+*
+*/
+int  adm();
+
+
 //Função que faz o cálculo dos estoque mínimos
 float estoqueMin( int tempReposicao, int tempo ,int consumoMedio1);
 
