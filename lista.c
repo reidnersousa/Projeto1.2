@@ -182,7 +182,7 @@ Lista *  DigitaStruct( Lista *recebe3 )
 
 /*Não estou usando*/
 /**
-*                  @posicao n2
+*                  @posicao nalal
 *                  @
 */
 Lista*AdicionaProdutoumporUm(Lista * rebvar,Produto p1, Produto p2 )
@@ -226,6 +226,16 @@ Lista*AdicionaProdutoumporUm(Lista * rebvar,Produto p1, Produto p2 )
 
 /**
 *           @Posicao n3
+*           @NomeFuncao controleFuncionario
+*           @Oquefaz    funcao que decidir o que fazer
+*           @quaisOutrasFuncoesDentro "adm",
+*                                     1  DigitaStruct,
+*                                     2 "buscarProdutoCodigo",
+*                                     3 "imprimirTodosProduto"
+*                                     4 "ComprarProduto",
+*                                     5 "GuardaMaterial"
+*                                     6 "ImprimirProdutoCodigo"
+*
 */
 /*FAZ TUDO Principal */
 void controleFuncionario()
@@ -315,35 +325,62 @@ void controleFuncionario()
 
 
 
-
-
-
+/**
+*           @Posicao n4
+*           @NomeFuncao "estoqueMin"
+*           @Oquefaz    recebe 3 int faz um calculo estoqueMin e returna um float
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 float estoqueMin( int tempReposicao, int tempo,int consumoMedio1)
 {
 
     return (consumoMedio1*tempReposicao)/tempo;
 }
 
+/**
+*           @Posicao n5
+*           @NomeFuncao "consumoMedio"
+*           @Oquefaz    recebe 2 int faz um calculo de consumo Medio e returna um float
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 float consumoMedio( int consItens, int tempo )
 {
 
     return consItens/tempo;
 }
 
+
+/**
+*           @Posicao n6
+*           @NomeFuncao "calLoteSuprimento"
+*           @Oquefaz    recebe 3 int faz um calculo de lote de Suprimento e returna um float
+*           @quaisOutrasFuncoesDentro   "sqrt"
+*/
 float calLoteSuprimento(int custoPedido, int Demanda, int CustArmazena)
 {
 
     return sqrt((2*custoPedido*Demanda)/CustArmazena);
 }
 
+
+/**
+*           @Posicao n7
+*           @NomeFuncao "estoqueMaxx"
+*           @Oquefaz    recebe 2 int faz um calculo estoqueMax e returna um float
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 float estoqueMax(int estoqueMin1, int  loteReposicao)
 {
     return estoqueMin1+loteReposicao;
 }
 
 
-//typedef struct lista Lista;
-
+/**
+*           @Posicao n8
+*           @NomeFuncao "inicializaE"
+*           @Oquefaz    recebe um void   e returna uma Lista null
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 /* função de inicialização: retorna uma lista vazia */
 Lista* inicializaE (void)
 {
@@ -351,12 +388,11 @@ Lista* inicializaE (void)
 }
 
 
-
 /**
-*               @Posicao desconhecida
+*               @Posicao n9
 *               @NomeFuncao inserirProdutoTeste
 *               @FuncoesDentrodaFuncao
-*               @QqueafuncaoFaz Ela pegas as funções que foram digitas na "DigitaStruct"   e coloca numa lista "novo"
+*               @QqueafuncaoFaz Ela pegas as funções que foram digitas na "DigitaStruct"   e coloca numa lista <novo>
 *               e retorna uma lista
 */
 Lista *inserirProdutoTeste(Lista * l,Produto i)
@@ -377,6 +413,10 @@ Lista *inserirProdutoTeste(Lista * l,Produto i)
     return novo;
 }
 
+
+/**
+*               @VoltaAqui
+*/
 Lista *inserirProdutoTesteM(Lista * l, Produto i)
 {
 
@@ -391,7 +431,13 @@ Lista *inserirProdutoTesteM(Lista * l, Produto i)
 }
 
 
-
+/**
+*           @Posicao n10
+*           @NomeFuncao "ComprarProduto"
+*           @Oquefaz    recebe uma lista  ,um codigo do produto
+*           e a quantidade de produto  que deixa comprar e adicionar no produto.qtdEstoque
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 void ComprarProduto(Lista * l,int codigo,int x)
 {
     Lista *p;
@@ -408,6 +454,15 @@ void ComprarProduto(Lista * l,int codigo,int x)
 
 }
 
+
+/**
+*           @Posicao n11
+*           @NomeFuncao "EmitirPedido"
+*           @Oquefaz    recebe uma lista  ,uma Struct produto e um int x (que significa a quantidade).
+*           Verificar se o produto tem no estoque caso tenha vende e produto e notificar falando que
+*           produto foi comprado
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 void EmitirPedido(Lista * l, Produto v, int x)
 {
     Lista *p;
@@ -430,6 +485,13 @@ void EmitirPedido(Lista * l, Produto v, int x)
 }
 
 
+/**
+*           @Posicao n12
+*           @NomeFuncao "imprimeTodosProdutos"
+*           @Oquefaz    recebe uma lista
+*           Verificar se tem produto na lista e imprimir os produtos na lista
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 void imprimeTodosProduto(Lista *l)
 {
 
@@ -452,7 +514,14 @@ void imprimeTodosProduto(Lista *l)
 
 
 
-// arrrumei
+/**
+*           @Posicao n13
+*           @NomeFuncao "imprimeTodosCodigo"
+*           @Oquefaz    recebe uma lista e um int codigo
+*           Verificar se tem produto na lista tem o msm codigo  e imprimir os produtos na lista.
+*           Caso o codigo seja diferente do que tem na lista ele imprimir produto nao cadastro ..
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 void imprimeProdutoCodigo (Lista *l,int codigo)
 {
     Produto v;
@@ -480,7 +549,14 @@ void imprimeProdutoCodigo (Lista *l,int codigo)
 
 }
 
-/* função imprime: imprime valores dos elementos */
+
+/**
+*           @Posicao n14
+*           @NomeFuncao "imprimeProduto"
+*           @Oquefaz    recebe uma struct produto
+*           Imprimir todos os produtos .
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 void imprimeProduto (Produto v)
 {
 
@@ -517,6 +593,15 @@ int vazia_compactada (Lista* l)
     return (l == NULL);
 }
 
+
+/**
+*           @Posicao n15
+*           @NomeFuncao "buscaProdutoCodigo"
+*           @Oquefaz  recebe uma lista e um codigo procura o codigo
+*           se o codigo tive na lista imprimir o produto com este codigo
+*           caso contrario  imprimir produto nao encontrado e retorna null
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 /* função busca: busca um elemento na lista */
 //Identificar produto
 Lista* buscaProdutoCodigo (Lista* l, int v)
@@ -542,7 +627,14 @@ Lista* buscaProdutoCodigo (Lista* l, int v)
 }
 
 
-
+/**
+*           @Posicao n16
+*           @NomeFuncao "retiraPeloCodigo"
+*           @Oquefaz  recebe uma lista e um codigo procura o codigo
+*           se o codigo tive na lista retira o produto com este codigo
+*           caso contrario  imprimir produto nao encontrado e retorna null
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 /* função retira: retira elemento da lista */
 Lista* retiraPeloCodigo (Lista* l, int v)
 {
@@ -574,6 +666,14 @@ Lista* retiraPeloCodigo (Lista* l, int v)
     return l;
 }
 
+/**
+*           @Posicao n17
+*           @NomeFuncao "libera"
+*           @Oquefaz  recebe uma lista e um codigo procura o codigo
+*           se o codigo tive na lista retira o produto com este codigo
+*           caso contrario  imprimir produto nao encontrado e retorna null
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 void liberaE (Lista* l)
 {
     Lista* p = l;
@@ -586,7 +686,12 @@ void liberaE (Lista* l)
     }
 }
 
-
+/**
+*           @Posicao n18
+*           @NomeFuncao "criaProduto"
+*           @Oquefaz  recebe uma produto e criar uma lista
+*           @quaisOutrasFuncoesDentro   nenhuma
+*/
 /* função auxiliar: cria e inicializa um nó */
 Lista* criaProduto (Produto v)
 {
@@ -594,6 +699,10 @@ Lista* criaProduto (Produto v)
     p->info = v;
     return p;
 }
+
+
+
+
 /* função insere_ordenado: insere elemento em ordem */
 Lista* insere_ordenadoProduto (Lista* l, Produto v)
 {
